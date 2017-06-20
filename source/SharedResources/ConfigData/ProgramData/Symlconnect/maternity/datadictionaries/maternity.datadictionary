@@ -65,7 +65,9 @@
 
         <!-- Due Date -->
         <property name="LMPDate" kind="DateTime"/>
-        <virtualproperty name="DueDate" kind="DateTime"/>
+        <virtualproperty name="DueDate" kind="DateTime">
+          <mydueDate mydueDateProperty="LMPDate"/>
+        </virtualproperty>
         
         <!-- Next of Kin -->
         <propertyref name="NextOfKinName" refname="Name"/>
