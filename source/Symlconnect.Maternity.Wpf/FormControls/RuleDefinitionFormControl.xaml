@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Symlconnect.Maternity.Wpf.FormControls.RuleDefinitionFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dataModel="clr-namespace:Symlconnect.DataModel;assembly=Symlconnect.DataModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance dataModel:IRuleDefinition}">
+    <Grid Style="{StaticResource MessageStyle}"
+          Margin="0"
+          HorizontalAlignment="Left">
+        <Border Style="{StaticResource InvalidRuleBorderStyle}">
+            <StackPanel>
+                <TextBlock Text="{Binding Message}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

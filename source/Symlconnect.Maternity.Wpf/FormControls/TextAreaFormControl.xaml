@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Symlconnect.Maternity.Wpf.FormControls.TextAreaFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Symlconnect.ViewModel.ViewModels;assembly=Symlconnect.ViewModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModels:TextAreaControlDefinitionViewModel, IsDesignTimeCreatable=True}">
+    <Grid HorizontalAlignment="Left"
+          Visibility="{Binding Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+          IsSharedSizeScope="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition SharedSizeGroup="Label"/>
+            <ColumnDefinition SharedSizeGroup="Rules" Width="24"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="{Binding ControlDefinition.Caption}"
+               Padding="5,4,5,5"               
+               VerticalAlignment="Top"/>
+        <TextBox MinWidth="300"
+                 MaxWidth="500"
+                 Grid.Column="2"
+                 AcceptsReturn="True"
+                 HorizontalScrollBarVisibility="Auto"
+                 Text="{Binding Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</UserControl>

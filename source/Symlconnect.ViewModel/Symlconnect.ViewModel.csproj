@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90660699-AB83-445F-ACAA-4F577A20B5E5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Symlconnect.ViewModel</RootNamespace>
+    <AssemblyName>Symlconnect.ViewModel</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Xamarin|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_Xamarin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Desktop|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_Desktop\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Wpf|AnyCPU'">
+    <OutputPath>bin\Release_Wpf\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AuditControlDefinition.cs" />
+    <Compile Include="AlertControlDefinition.cs" />
+    <Compile Include="CheckboxControlDefinition.cs" />
+    <Compile Include="ChildEntityCollectionControlDefinition.cs" />
+    <Compile Include="CodeAnalysis\ExcludeFromCodeCoverageAttribute.cs" />
+    <Compile Include="ControlDefinitionBase.cs" />
+    <Compile Include="ControlDefinitionCollection.cs" />
+    <Compile Include="DateBoxControlDefinition.cs" />
+    <Compile Include="Deserializers\BasicControlDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\ChildEntityCollectionControlDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\ControlElementGroupDeserializer.cs" />
+    <Compile Include="Deserializers\DropdownControlDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\EditableDropdownControlDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\FormDefinitionDocumentDeserializer.cs" />
+    <Compile Include="Deserializers\FormDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\FormSectionDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\LookupDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\LookupDefinitionElementGroupDeserializer.cs" />
+    <Compile Include="Deserializers\LookupEntryElementDeserializer.cs" />
+    <Compile Include="Deserializers\MessageControlDefinitionDeserializer.cs" />
+    <Compile Include="Deserializers\StackControlDefinitionElementDeserializer.cs" />
+    <Compile Include="DropdownControlDefinition.cs" />
+    <Compile Include="EditableDropdownControlDefinition.cs" />
+    <Compile Include="Factories\ChildEntityCollectionControlDefinitionViewModelFactory.cs" />
+    <Compile Include="Factories\ControlDefinitionViewModelFactory.cs" />
+    <Compile Include="Factories\FormSectionViewModelFactory.cs" />
+    <Compile Include="Factories\FormViewModelFactory.cs" />
+    <Compile Include="FormDefinition.cs" />
+    <Compile Include="FormSectionDefinitionCollection.cs" />
+    <Compile Include="IControlDefinition.cs" />
+    <Compile Include="IFormDefinition.cs" />
+    <Compile Include="IFormDefinitionLocator.cs" />
+    <Compile Include="IFormSectionDefinition.cs" />
+    <Compile Include="ILookupDefinition.cs" />
+    <Compile Include="ILookupEntry.cs" />
+    <Compile Include="LookupDefinition.cs" />
+    <Compile Include="LookupDefinitionCollection.cs" />
+    <Compile Include="LookupEntry.cs" />
+    <Compile Include="Media\Color.cs" />
+    <Compile Include="MessageControlDefinition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormSectionDefinition.cs" />
+    <Compile Include="StackControlDefinition.cs" />
+    <Compile Include="TextAreaControlDefinition.cs" />
+    <Compile Include="TextBlockControlDefinition.cs" />
+    <Compile Include="TextBoxDefinition.cs" />
+    <Compile Include="ViewModels\AuditControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\AlertControlDefinitionMonitorViewModel.cs" />
+    <Compile Include="ViewModels\AlertControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\CheckboxControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\ChildEntityCollectionControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\ControlDefinitionMonitorViewModel.cs" />
+    <Compile Include="ViewModels\ControlDefinitionViewModel.cs" />
+    <Compile Include="Factories\ControlDefinitionViewModelFactoryLocator.cs" />
+    <Compile Include="ViewModels\ControlDefinitionViewModelChange.cs" />
+    <Compile Include="ViewModels\DateBoxControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\DropdownControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\DropdownControlDefinitionViewModelBase.cs" />
+    <Compile Include="ViewModels\EditableDropdownControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\FormContext.cs" />
+    <Compile Include="ViewModels\IControlDefinitionViewModelContainer.cs" />
+    <Compile Include="ViewModels\IControlDefinitionViewModelQuery.cs" />
+    <Compile Include="ViewModels\IFormContext.cs" />
+    <Compile Include="ViewModels\FormSectionViewModel.cs" />
+    <Compile Include="ViewModels\FormViewModel.cs" />
+    <Compile Include="ViewModels\IControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\IControlDefinitionViewModelFactory.cs" />
+    <Compile Include="ViewModels\IControlDefinitionViewModelFactoryLocator.cs" />
+    <Compile Include="ViewModels\InvalidRuleDefinitionsControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\StackControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\TextAreaControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\TextBlockControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\TextBoxControlDefinitionViewModel.cs" />
+    <Compile Include="ViewModels\YesNoControlDefinitionViewModel.cs" />
+    <Compile Include="YesNoControlDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Prism, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.6.2.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Symlconnect.Common\Symlconnect.Common.csproj">
+      <Project>{8F812CBD-A273-4C37-8FEA-F7A8F00DF0D0}</Project>
+      <Name>Symlconnect.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symlconnect.Contracts\Symlconnect.Contracts.csproj">
+      <Project>{B75EF7AE-9C50-4008-B757-FB0CEBD40A7A}</Project>
+      <Name>Symlconnect.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symlconnect.DataModel\Symlconnect.DataModel.csproj">
+      <Project>{5A974588-2AE1-4135-896C-404856732BAE}</Project>
+      <Name>Symlconnect.DataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Symlconnect.Maternity.Wpf.FormControls.TextBoxFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Symlconnect.ViewModel.ViewModels;assembly=Symlconnect.ViewModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModels:TextBoxControlDefinitionViewModel, IsDesignTimeCreatable=True}">
+    <StackPanel>
+        <Grid HorizontalAlignment="Left"
+          Visibility="{Binding Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+          IsSharedSizeScope="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="Label"/>
+                <ColumnDefinition SharedSizeGroup="Rules" Width="24"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Content="{Binding ControlDefinition.Caption}"
+               VerticalAlignment="Center"/>
+            <Image Source="../Resources/error.png"
+               Width="16"
+               Height="16"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Visibility="{Binding Path=InvalidRuleDefinitions, Converter={StaticResource IsNotNullToVisibilityConverter}}"/>
+            <TextBox Grid.Column="2" 
+                     Margin="0"
+                     MinWidth="{Binding MinWidth}"
+                     Width="{Binding Width}"
+                     MaxWidth="500"
+                     Text="{Binding Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Grid Visibility="{Binding Path=InvalidRuleDefinitions, Converter={StaticResource IsNotNullToVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="Label"/>
+                <ColumnDefinition SharedSizeGroup="Rules" Width="24"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ItemsControl Grid.Column="2" 
+                      ItemsSource="{Binding InvalidRuleDefinitions}"/>
+        </Grid>
+    </StackPanel>
+</UserControl>
+

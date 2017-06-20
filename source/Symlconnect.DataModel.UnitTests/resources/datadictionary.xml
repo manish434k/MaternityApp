@@ -1,0 +1,27 @@
+<datadictionary name="datadictionaryname">
+    <properties>
+        <property name="sharedtextproperty1" kind="Text"/>
+        <property name="sharednumericproperty1" kind="Numeric"/>
+        <property name="sharedintegerproperty1" kind="Integer"/>
+        <property name="sharedbooleanproperty1" kind="Boolean"/>
+        <property name="shareddatetimeproperty1" kind="DateTime"/>
+    </properties>
+    <entitydefinitions>
+        <entitydefinition name="entity1">
+            <properties>
+                <property name="textproperty1" kind="Text"/>
+                <property name="numericproperty1" kind="Numeric"/>
+                <property name="integerproperty1" kind="Integer"/>
+                <property name="booleanproperty1" kind="Boolean"/>
+                <property name="datetimeproperty1" kind="DateTime"/>
+                
+                <propertyref name="propertyref1" refname="sharedtextproperty1"/>
+                
+                <virtualproperty name="virtualproperty1" kind="text">   <propertyvalue name="textproperty1" kind="text"/>
+                </virtualproperty>
+              
+              
+            </properties>
+        </entitydefinition>
+    </entitydefinitions>
+</datadictionary>

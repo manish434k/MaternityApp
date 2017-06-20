@@ -1,0 +1,14 @@
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\Symlconnect.UnitTests.Framework.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\Symlconnect.UnitTests.Framework.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\FakeItEasy.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\nunit.framework.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\Symlconnect.Contracts.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\Symlconnect.Contracts.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\FakeItEasy.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\FakeItEasy.xml
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\nunit.framework.xml
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\obj\Debug\Symlconnect.UnitTests.Framework.csprojResolveAssemblyReference.cache
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\obj\Debug\Symlconnect.UnitTests.Framework.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.UnitTests.Framework\obj\Debug\Symlconnect.UnitTests.Framework.pdb

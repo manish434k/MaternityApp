@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Symlconnect.Maternity.Wpf.FormControls.ChildEntityCollectionFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Symlconnect.ViewModel.ViewModels;assembly=Symlconnect.ViewModel"
+             xmlns:views="clr-namespace:Symlconnect.Maternity.Wpf.Views"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModels:ChildEntityCollectionControlDefinitionViewModel}">
+    <StackPanel>
+        <Button Style="{StaticResource AccentedSquareButtonStyle}"
+                HorizontalAlignment="Left"
+                Margin="0,0,0,11">add new</Button>
+        <ItemsControl ItemsSource="{Binding ChildFormViewModels}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type viewModels:FormViewModel}">
+                    <DataTemplate.Resources>
+                        <Style TargetType="TextBlock" x:Key="SectionStyle">
+                            <Setter Property="FontSize" Value="16"/>
+                            <Setter Property="Margin" Value="0,0,0,0"/>
+                            <Setter Property="Padding" Value="7,2,0,5"/>
+                        </Style>
+                    </DataTemplate.Resources>
+                    <views:FormEditView/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</UserControl>

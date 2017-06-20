@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Symlconnect.Maternity.Wpf.FormControls.StackFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Symlconnect.ViewModel.ViewModels;assembly=Symlconnect.ViewModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModels:StackControlDefinitionViewModel, IsDesignTimeCreatable=True}">
+    <Grid HorizontalAlignment="Stretch"
+          x:Name="Grid"
+          Visibility="{Binding Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Grid.Style>
+            <Style>
+                <Setter Property="Grid.IsSharedSizeScope" Value="False"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ControlDefinition.Caption}" Value="{x:Null}">
+                        <Setter Property="Grid.IsSharedSizeScope" Value="True"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition SharedSizeGroup="Label"/>
+            <ColumnDefinition SharedSizeGroup="Rules"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="{Binding ControlDefinition.Caption}"
+               Visibility="{Binding Path=ControlDefinition.Caption, Converter={StaticResource IsNotNullOrEmptyToVisibilityConverter}}"
+               VerticalAlignment="Center"/>
+        <ItemsControl ItemsSource="{Binding ControlDefinitionViewModels}"
+                      Margin="{Binding Margin}"
+                      Grid.Column="2">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="{Binding Path=ControlDefinition.IsHorizontal, Converter={StaticResource IsHorizontalToOrientationConverter}}"
+                                Grid.IsSharedSizeScope="True"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </Grid>
+</UserControl>

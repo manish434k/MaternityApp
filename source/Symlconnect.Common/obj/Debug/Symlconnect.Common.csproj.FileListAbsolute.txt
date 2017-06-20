@@ -1,0 +1,9 @@
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\bin\Debug\Symlconnect.Common.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\bin\Debug\Symlconnect.Common.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\bin\Debug\Prism.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\bin\Debug\Symlconnect.Contracts.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\bin\Debug\Symlconnect.Contracts.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\bin\Debug\Prism.xml
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\obj\Debug\Symlconnect.Common.csprojResolveAssemblyReference.cache
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\obj\Debug\Symlconnect.Common.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Common\obj\Debug\Symlconnect.Common.pdb

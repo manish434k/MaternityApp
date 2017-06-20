@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<entity id="2dd7006e-81bc-4def-8ab8-57b3524d1422-1" datadictionary="maternity" entityname="record" createddatetime="2017-02-15T10:30:00.0000000Z" createdbyuserid="UserId1" createdbyuserdisplayname="Midwife B">
+  <values propertyname="Name">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">Carol Hughes</value>
+  </values>
+  <values propertyname="LikesToBeCalled">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">Carol</value>
+  </values>
+  <values propertyname="AddressLine1">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">1, High Street</value>    
+  </values>
+  <values propertyname="AddressLine2">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">Colwyn Bay</value>
+  </values>
+  <values propertyname="PostCode">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">LL29 7AD</value>
+  </values>
+  <values propertyname="HomeTelephone">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">01492 655943</value>
+  </values>
+  <values propertyname="DateOfBirth">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">1990-02-12T00:00:00.0000000Z</value>
+  </values>
+  <values propertyname="NHSNumber">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">4009220</value>
+  </values>
+  <values propertyname="UnitNumber">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">83392</value>
+  </values>
+  <values propertyname="MaidenName">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">Wren</value>
+  </values>
+  <values propertyname="PreviousSurname">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">Jones</value>
+  </values>
+  <values propertyname="Faith">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">Catholic</value>
+  </values>
+  <values propertyname="PreferredLanguage">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">English</value>
+  </values>
+  <values propertyname="IsInterpreterRequired">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">False</value>
+  </values>
+  <values propertyname="IsReadWriteAssistanceRequired">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">False</value>
+  </values>
+  <values propertyname="LMPDate">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">2017-01-14T00:00:00.0000000Z</value>
+  </values>
+  <values propertyname="IsAllergies">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">True</value>
+  </values>
+  <values propertyname="IsAllergiesAlert">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">True</value>
+  </values>
+  <values propertyname="IsAllergiesDetails">
+    <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">Allergic to Penicillin</value>
+  </values>
+  <childentities propertyname="AntenatalConsultations">
+    <childentity sessionid="Session1" userid="UserId1" createddatetime="2017-01-01T00:00:00.0000000Z">
+      <entity id="2dd7006e-81bc-4def-8ab8-57b3524d1422-2" datadictionary="maternity" entityname="antenatalconsultation" createddatetime="2017-02-26T10:15:00.0000000Z" createdbyuserid="UserId1" createdbyuserdisplayname="Midwife A">
+        <values propertyname="DateTime">
+          <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">2017-01-02T01:00:00.0000000Z</value>
+        </values>
+        <values propertyname="HeightInCms">
+          <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">170</value>
+        </values>
+        <values propertyname="WeightInKgs">
+          <value sessionid="Session1" userid="UserId1" changedatetime="2017-01-01T00:00:00.0000000Z">63</value>
+        </values>
+      </entity>
+    </childentity>
+  </childentities>
+</entity>

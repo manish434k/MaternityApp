@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAA422D5-2965-43D1-A3E1-C8665B75EEF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Symlconnect.DataModel.UnitTests</RootNamespace>
+    <AssemblyName>Symlconnect.DataModel.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Xamarin|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_Xamarin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Desktop|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_Desktop\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Wpf|AnyCPU'">
+    <OutputPath>bin\Release_Wpf\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FakeItEasy, Version=2.3.3.0, Culture=neutral, PublicKeyToken=eff28e2146d5fd2c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FakeItEasy.2.3.3\lib\net40\FakeItEasy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ChildEntity\ChildEntityCollectionTests.cs" />
+    <Compile Include="ChildEntity\ChildEntityTests.cs" />
+    <Compile Include="DataDictionary\DataDictionaryTests.cs" />
+    <Compile Include="ElementDeserializers\AuditPropertyDefinitionDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\ChildEntityCollectionPropertyDefinitionElementDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\ChildEntityElementDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\DataDictionaryElementDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\ChildEntityCollectionElementDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\EntityPropertyValue.cs" />
+    <Compile Include="ElementDeserializers\EntityPropertyValueCollectionElementDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\EntityDefinitionElementDeserializationTests.cs" />
+    <Compile Include="ElementDeserializers\EntityElementDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\PropertyDefinitionElementDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\PropertyDefinitionReferenceElementDeserializerTests.cs" />
+    <Compile Include="ElementDeserializers\PropertyValueProviderElementDeserializerTests.cs" />
+    <Compile Include="ElementSerializers\ChildEntityCollectionSerializerTests.cs" />
+    <Compile Include="ElementSerializers\ChildEntityElementSerializerTests.cs" />
+    <Compile Include="ElementSerializers\EntityElementSerializerTests.cs" />
+    <Compile Include="ElementSerializers\EntityPropertyValueElementSerializerTests.cs" />
+    <Compile Include="ElementSerializers\EntityPropertyValueCollectionSerializerTests.cs" />
+    <Compile Include="EntityDefinition\EntityDefinitionTests.cs" />
+    <Compile Include="Entity\EntityPropertyTests.cs" />
+    <Compile Include="Entity\EntityPropertyValueChangesetTests.cs" />
+    <Compile Include="Entity\EntityTests.cs" />
+    <Compile Include="Factories\AuditPropertyDefinitionFactoryUnitTests.cs" />
+    <Compile Include="Factories\ChildEntityCollectionFactoryUnitTests.cs" />
+    <Compile Include="Factories\ChildEntityCollectionPropertyDefinitionFactoryUnitTests.cs" />
+    <Compile Include="Factories\ChildEntityFactoryUnitTests.cs" />
+    <Compile Include="Factories\FactoryTestBase.cs" />
+    <Compile Include="IntegrationTests\DataDictionaryDeserializationTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IntegrationTests\EntitySerializationTests.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyDefinitions\AuditPropertyDefinitionTests.cs" />
+    <Compile Include="PropertyDefinitions\PropertyDefinitionReferenceTests.cs" />
+    <Compile Include="PropertyDefinitions\PropertyDefinitionTests.cs" />
+    <Compile Include="PropertyDefinitions\ChildEntityCollectionPropertyDefinitionTests.cs" />
+    <Compile Include="PropertyDefinitions\PropertyDefinitionTestsBase.cs" />
+    <Compile Include="PropertyDefinitions\VirtualPropertyDefinitionTests.cs" />
+    <Compile Include="ValueProviders\PropertyValueProviderTests.cs" />
+    <Compile Include="ValueProviders\ValueProviderTestsBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Symlconnect.Common\Symlconnect.Common.csproj">
+      <Project>{8F812CBD-A273-4C37-8FEA-F7A8F00DF0D0}</Project>
+      <Name>Symlconnect.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symlconnect.Contracts\Symlconnect.Contracts.csproj">
+      <Project>{B75EF7AE-9C50-4008-B757-FB0CEBD40A7A}</Project>
+      <Name>Symlconnect.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symlconnect.DataModel\Symlconnect.DataModel.csproj">
+      <Project>{5A974588-2AE1-4135-896C-404856732BAE}</Project>
+      <Name>Symlconnect.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symlconnect.UnitTests.Framework\Symlconnect.UnitTests.Framework.csproj">
+      <Project>{DE90FE0A-CA8A-47E7-9281-D9B088FD8093}</Project>
+      <Name>Symlconnect.UnitTests.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\entity-childentities.xml" />
+    <Content Include="resources\entity-basic.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\datadictionary.xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

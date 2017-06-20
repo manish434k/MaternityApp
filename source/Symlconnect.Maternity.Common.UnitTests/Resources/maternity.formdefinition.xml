@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<form datadictionary="maternity" id="maternity">
+  <lookups>
+    <lookup id="faith" iseditable="true">
+      <entry value="Catholic" />
+      <entry value="Church of England"/>
+      <entry value="Muslim"/>
+      <entry value="Hindu"/>
+    </lookup>
+    <lookup id="gender" iseditable="false">
+      <entry value="Male"/>
+      <entry value="Femail"/>
+    </lookup>
+    <lookup id="labour-onset">
+      <entry value="spontaneous" caption="Spontaneous"/>
+      <entry value="induced" caption="Induced"/>
+      <entry value="planned-caesarean" caption="PlannedCaesarean"/>
+    </lookup>
+  </lookups>
+  <controls>
+    <textbox id="addressline1" caption="Address Line 1:"/>
+    <textbox id="addressline2" caption="Address Line 2:"/>
+    <textbox id="addressline3" caption="Address Line 3:"/>
+    <textbox id="postcode" caption="Postcode:"/>
+    <textbox id="telephone" />
+    <textarea id="details" caption="Details:"/>
+    <checkbox id="showinalerts" caption="Show in Alerts"/>
+    <checkbox id="showinsummary" caption="Show in Summary"/>
+    <alert id="IsAllergiesAlert" value="IsAllergiesAlert" visible="IsAllergiesAlert" caption="Medical History \ Allergies" content="IsAllergiesDetails"/>
+    <alert id="IsAsthmaAlert" value="IsAsthmaAlert" visible="IsAsthmaAlert" caption="Medical History \ Asthma or chest problems" content="IsAsthmaDetails"/>
+    <alert id="IsBladderHistoryAlert" value="IsBladderHistoryAlert" visible="IsBladderHistoryAlert" caption="Medical History \ Bladder problems" content="IsBladderHistoryDetails"/>
+    <audit id="IsCarbonMonoxideComplete" value="IsCarbonMonoxideComplete" caption="Carbon Monoxide">Action: Provide information about Carbon Monoxide exposure and present the Carbon Monoxide reading value.</audit>
+  </controls>
+  <section backcolor="#B1CCC8" forecolor="#FFFFFF" title="Personal Details">
+    <section title="Your Details">
+      <textbox value="Name" caption="Name:"/>
+      <textbox value="LikesToBeCalled" caption="Likes to be called:"/>
+      <textbox ref="addressline1" value="AddressLine1"/>
+      <textbox ref="addressline2" value="AddressLine2"/>
+      <textbox ref="addressline3" value="AddressLine3"/>
+      <textbox ref="postcode" value="PostCode"/>
+      <datebox value="DateOfBirth" caption="Date of birth:"/>
+      <textblock value="Age" caption="Age:"/>
+      <textbox value="NHSNumber" caption="NHS No:"/>
+      <textbox value="UnitNumber" caption="Unit No:"/>
+      <textbox value="MaidenName" caption="Maiden name:"/>
+      <textbox value="PreviousSurname" caption="Previous surname:"/>
+      <editabledropdown lookup="faith" value="Faith" caption="Faith/Religion:"/>
+      <editabledropdown lookup="language" value="PreferredLanguage" caption="Preferred language:"/>
+      <yesno value="IsInterpreterRequired" caption="Interpreter required?"/>
+      <yesno value="IsReadWriteAssistanceRequired" caption="Assistance needed with reading/writing?"/>
+    </section>
+    <section title="Telephone Numbers">
+      <textbox ref="telephone" value="HomeTelephone" caption="Home:"/>
+      <textbox ref="telephone" value="WorkTelephone" caption="Work:"/>
+      <textbox ref="telephone" value="MobileTelephone" caption="Mobile:"/>
+    </section>
+    <section title="When is my Baby Due">
+      <datebox value="LMPDate" caption="LMP Date:"/>
+      <textblock value="DueDate" caption="When is my baby due:"/>
+    </section>
+    <section title="Key Contacts">
+      <section title="Next of Kin">
+        <textbox value="NextOfKinName" caption="Name:"/>
+        <textbox ref="addressline1" value="NextOfKinAddressLine1"/>
+        <textbox ref="addressline2" value="NextOfKinAddressLine2"/>
+        <textbox ref="addressline3" value="NextOfKinAddressLine3"/>
+        <textbox ref="postcode" value="NextOfKinPostCode"/>
+        <textbox ref="telephone" value="NextOfKinHomeTelephone" caption="Home Tel No:"/>
+        <textbox ref="telephone" value="NextOfKinWorkTelephone" caption="Work Tel No:"/>
+        <textbox ref="telephone" value="NextOfKinMobileTelephone" caption="Mobile Tel No:"/>
+        <editabledropdown lookup="relation" value="NextOfKinRelation" caption="Relation:"/>
+      </section>
+      <section title="Emergency Contact (if different)">
+        <textbox value="EmergencyContactName" caption="Name:"/>
+        <textbox ref="addressline1" value="EmergencyContactAddressLine1"/>
+        <textbox ref="addressline2" value="EmergencyContactAddressLine2"/>
+        <textbox ref="addressline3" value="EmergencyContactAddressLine3"/>
+        <textbox ref="postcode" value="EmergencyContactPostCode"/>
+        <textbox ref="telephone" value="EmergencyContactHomeTelephone" caption="Home Tel No:"/>
+        <textbox ref="telephone" value="EmergencyContactWorkTelephone" caption="Work Tel No:"/>
+        <textbox ref="telephone" value="EmergencyContactMobileTelephone" caption="Mobile Tel No:"/>
+        <editabledropdown lookup="relation" value="EmergencyContactRelation" caption="Relation:"/>
+      </section>
+    </section>
+  </section>
+  <section backcolor="#73578A" forecolor="#FFFFFF" title="Medical Information">
+    <section title="Medical History">
+
+      <!-- Allergies -->
+      <yesno value="IsAllergies" caption="Allergies"/>
+      <stack visible="IsAllergies" caption=" ">
+        <textarea ref="details" value="IsAllergiesDetails" caption="Details:"/>
+        <checkbox ref="showinalerts" value="IsAllergiesAlert" caption="Show as Alert"/>
+        <alert ref="IsAllergiesAlert" />
+        <checkbox ref="showinsummary" value="IsAllergiesSummary" caption="Show in Summary"/>
+      </stack>
+
+      <!-- Asthma -->
+      <yesno value="IsAsthma" caption="Asthma or chest problems"/>
+      <stack visible="IsAsthma" caption=" ">
+        <textarea ref="details" value="IsAsthmaDetails" caption="Details:" />
+        <checkbox ref="showinalerts" value="IsAsthmaAlert" caption="Show as Alert" />
+        <alert ref="IsAsthmaAlert" />
+        <checkbox ref="showinsummary" value="IsAsthmaSummary" caption="Show in Summary" />
+      </stack>
+
+      <!-- Bladder problems -->
+      <yesno value="IsBladderHistory" caption="Bladder problems"/>
+      <stack visible="IsBladderHistory" caption=" ">
+        <textarea ref="details" value="IsBladderHistoryDetails" caption="Details:" />
+        <checkbox ref="showinalerts" value="IsBladderHistoryAlert" caption="Show as Alert" />
+        <alert ref="IsBladderHistoryAlert" />
+        <checkbox ref="showinsummary" value="IsBladderHistorySummary" caption="Show in Summary" />
+      </stack>
+    </section>
+  </section>
+  <section backcolor="#4FA347" forecolor="#FFFFFF" title="Antenatal Screening">
+  </section>
+  <section backcolor="#BD64AF" forecolor="#FFFFFF" title="Past Pregnancies">
+  </section>
+  <section backcolor="#F57753" forecolor="#FFFFFF" title="Consultations &amp; Admissions">
+    <section title="Consultations">
+      <childentities isaddallowed="True" form="consultation" propertyname="AntenatalConsultations" />
+    </section>
+    <section title="Management Plans &amp; Admissions">
+    </section>
+  </section>
+  <section backcolor="#A6DBD6" forecolor="#FFFFFF" title="Fetal Movements">
+  </section>
+  <section backcolor="#FD8AAA" forecolor="#FFFFFF" title="Discussion Topics">
+    <section id="GrowthAndWellbeing" title="Your exposure to Carbon Monoxide">
+      <audit ref="IsCarbonMonoxideComplete"/>
+    </section>
+    <section id="Alchohol" title="How much alchohol you drink">
+
+    </section>
+    <section id="NonPrescribedMedicine" title="Non prescribed medicine/natural remedies">
+
+    </section>
+    <section id="LookingAfterYourself" title="Looking after yourself">
+
+    </section>
+    <section id="ConversationsInPregnancy" title="Conversations in pregnancy">
+
+    </section>
+  </section>
+</form>

@@ -1,0 +1,11 @@
+﻿<entity  id="EntityId" datadictionary="DataDictionaryName" entityname="EntityName" createddatetime="2017-01-02T00:00:00.0000000Z" createdbyuserid="CreatedByUserIdValue" createdbyuserdisplayname="CreatedByUserDisplayNameValue">
+  <childentities propertyname="ChildEntitiesPropertyName">
+    <childentity sessionid="SessionIdValue" userid="UserIdValue" createddatetime="2017-01-01T00:00:00.0000000Z">
+      <entity id="ChildEntityId" datadictionary="DataDictionaryName" entityname="ChildEntityName" createddatetime="2017-01-02T00:00:00.0000000Z" createdbyuserid="CreatedByUserIdValue" createdbyuserdisplayname="CreatedByUserDisplayNameValue">
+        <values propertyname="stringproperty">
+          <value sessionid="SessionIdValue0" userid="UserIdValue0" changedatetime="2017-01-01T00:00:00.0000000Z">StringValue1</value>
+        </values>
+      </entity>
+    </childentity>
+  </childentities>
+</entity>

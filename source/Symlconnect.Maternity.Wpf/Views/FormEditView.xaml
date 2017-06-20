@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Symlconnect.Maternity.Wpf.Views.FormEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Symlconnect.Maternity.Wpf.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="500"
+             d:DataContext="{d:DesignInstance viewModels:FormDesignTimeViewModel, IsDesignTimeCreatable=True}"
+             Background="White">
+    <ItemsControl ItemsSource="{Binding FormSectionViewModels}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                    <TextBlock Background="{Binding Path=FormSectionDefinition.BackgroundColor, Converter={StaticResource ColorToHexStringConverter}}"                                       
+                                       Foreground="{Binding Path=FormSectionDefinition.ForegroundColor, Converter={StaticResource ColorToHexStringConverter}}" 
+                                       Style="{DynamicResource SectionStyle}" 
+                                       Text="{Binding Title}"/>
+                    <ItemsControl ItemsSource="{Binding ChildFormSectionViewModels}"
+                                          BorderBrush="{Binding Path=FormSectionDefinition.BackgroundColor, Converter={StaticResource ColorToHexStringConverter}}"
+                                          BorderThickness="3,0,3,3"
+                                          Padding="7,4,7,11">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource HeadingStyle}"
+                                               Visibility="{Binding Path=Title,Converter={StaticResource IsNotNullOrEmptyToVisibilityConverter}}"
+                                               Text="{Binding Title}"/>
+                                    <ItemsControl ItemsSource="{Binding ChildFormSectionViewModels}"
+                                                          Grid.IsSharedSizeScope="True"/>
+                                    <ItemsControl ItemsSource="{Binding ControlDefinitionViewModels}"
+                                                          Margin="4,0,0,0"
+                                                          Grid.IsSharedSizeScope="True"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</UserControl>

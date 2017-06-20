@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<datadictionary name="maternity">
+  <rules>
+    <regexrule id="telephone-length" pattern="^(\s*\d\s*){11}$" message="UK Telephone numbers are usually 11 digits long" severity="Warning" />
+    <regexrule id="telephone-numeric" pattern="^\d*$" message="UK Telephone numbers should contain only numeric digits" severity="Error" />
+  </rules>
+  <properties>
+    <!-- These are common properties that can be referenced from several entities -->
+    <property name="Name" kind="Text"/>
+    <property name="AddressLine1" kind="Text"/>
+    <property name="AddressLine2" kind="Text"/>
+    <property name="AddressLine3" kind="Text"/>
+    <property name="PostCode" kind="Text"/>
+    <property name="Telephone" kind="Text">
+      <regexrule ref="telephone-length"/>
+      <!-- <regexrule ref="telephone-numeric"/> -->
+    </property>
+  </properties>
+  <entitydefinitions>
+    <entitydefinition name="antenatalconsultation">
+      <properties>
+        <property name="DateTime" kind="DateTime"/>
+        <virtualproperty name="Gestation" kind="Integer"/>
+        <property name="Urine" kind="Integer"/>
+        <property name="BloodPressureSys" kind="Integer"/>
+        <property name="BloodPressureDiaSys" kind="Integer"/>
+        <property name="Presentation" kind="Text"/>
+        <property name="Engaged" kind="Text"/>
+        <property name="FetalHeartRate" kind="Integer"/>
+        <auditproperty name="IsFetalMovementFeltAndDiscussed"/>
+        <property name="HeightInCms" kind="Numeric"/>
+        <property name="WeightInKgs" kind="Numeric"/>
+        <auditproperty name="IsCarePlanReviewed"/>
+        <auditproperty name="IsCarePlanRevised"/>
+        <property name="comments" kind="Text"/>
+        <property name="COReading" kind="Integer"/>
+      </properties>
+    </entitydefinition>
+    <entitydefinition name="record">
+      <properties>
+        <!-- Personal Details -->
+        <propertyref name="Name" refname="Name"/>
+        <property name="LikesToBeCalled" kind="Text"/>
+        <propertyref name="AddressLine1" refname="AddressLine1"/>
+        <propertyref name="AddressLine2" refname="AddressLine2"/>
+        <propertyref name="AddressLine3" refname="AddressLine3"/>
+        <propertyref name="PostCode" refname="PostCode"/>
+        <property name="DateOfBirth" kind="DateTime"/>
+        <virtualproperty name="Age" kind="Integer">
+          <age dateofbirthpropertyname="DateOfBirth"/>
+        </virtualproperty>
+        <property name="NHSNumber" kind="Text"/>
+        <property name="UnitNumber" kind="Text"/>
+        <property name="MaidenName" kind="Text"/>
+        <property name="PreviousSurname" kind="Text"/>
+        <property name="Faith" kind="Text"/>
+        <property name="PreferredLanguage" kind="Text"/>
+        <property name="IsInterpreterRequired" kind="Boolean"/>
+        <property name="IsReadWriteAssistanceRequired" kind="Boolean"/>
+
+        <!-- Telephone Numbers -->
+        <propertyref name="HomeTelephone" refname="Telephone"/>
+        <propertyref name="WorkTelephone" refname="Telephone"/>
+        <propertyref name="MobileTelephone" refname="Telephone"/>
+
+        <!-- Due Date -->
+        <property name="LMPDate" kind="DateTime"/>
+        <virtualproperty name="DueDate" kind="DateTime"/>
+
+        <!-- Next of Kin -->
+        <propertyref name="NextOfKinName" refname="Name"/>
+        <propertyref name="NextOfKinAddressLine1" refname="AddressLine1"/>
+        <propertyref name="NextOfKinAddressLine2" refname="AddressLine2"/>
+        <propertyref name="NextOfKinAddressLine3" refname="AddressLine3"/>
+        <propertyref name="NextOfKinPostCode" refname="PostCode"/>
+        <propertyref name="NextOfKinHomeTelephone" refname="Telephone"/>
+        <propertyref name="NextOfKinWorkTelephone" refname="Telephone"/>
+        <propertyref name="NextOfKinMobileTelephone" refname="Telephone"/>
+        <property name="NextOfKinRelation" kind="Text"/>
+
+        <!-- Emergency Contact -->
+        <propertyref name="EmergencyContactName" refname="Name"/>
+        <propertyref name="EmergencyContactAddressLine1" refname="AddressLine1"/>
+        <propertyref name="EmergencyContactAddressLine2" refname="AddressLine2"/>
+        <propertyref name="EmergencyContactAddressLine3" refname="AddressLine3"/>
+        <propertyref name="EmergencyContactPostCode" refname="PostCode"/>
+        <propertyref name="EmergencyContactHomeTelephone" refname="Telephone"/>
+        <propertyref name="EmergencyContactWorkTelephone" refname="Telephone"/>
+        <propertyref name="EmergencyContactMobileTelephone" refname="Telephone"/>
+        <property name="EmergencyContactRelation" kind="Text"/>
+
+        <!-- Medical History -->
+        <property name="IsAllergies" kind="Boolean"/>
+        <property name="IsAllergiesDetails" kind="Text"/>
+        <property name="IsAllergiesAlert" kind="Boolean"/>
+        <property name="IsAllergiesSummary" kind="Boolean"/>
+
+        <property name="IsAsthma" kind="Boolean"/>
+        <property name="IsAsthmaDetails" kind="Text"/>
+        <property name="IsAsthmaAlert" kind="Boolean"/>
+        <property name="IsAsthmaSummary" kind="Boolean"/>
+
+        <property name="IsBladderHistory" kind="Boolean"/>
+        <property name="IsBladderHistoryDetails" kind="Text"/>
+        <property name="IsBladderHistoryAlert" kind="Boolean"/>
+        <property name="IsBladderHistorySummary" kind="Boolean"/>
+
+        <!-- Carbon Monoxide -->
+        <auditproperty name="IsCarbonMonoxideComplete"/>
+
+        <!-- Important Information-->
+        <property name="BloodGroup" kind="Text"/>
+        <childentitycollection name="AntenatalConsultations" entityname="antenatalconsultation"/>
+      </properties>
+    </entitydefinition>
+  </entitydefinitions>
+</datadictionary>

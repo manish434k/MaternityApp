@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A974588-2AE1-4135-896C-404856732BAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Symlconnect.DataModel</RootNamespace>
+    <AssemblyName>Symlconnect.DataModel</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Xamarin|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_Xamarin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Desktop|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_Desktop\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Wpf|AnyCPU'">
+    <OutputPath>bin\Release_Wpf\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\Symlconnect.Common\Symlconnect.Common.csproj">
+      <Project>{8f812cbd-a273-4c37-8fea-f7a8f00df0d0}</Project>
+      <Name>Symlconnect.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symlconnect.Contracts\Symlconnect.Contracts.csproj">
+      <Project>{b75ef7ae-9c50-4008-b757-fb0cebd40a7a}</Project>
+      <Name>Symlconnect.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuditPropertyDefinition.cs" />
+    <Compile Include="ChildEntity.cs" />
+    <Compile Include="ChildEntityCollection.cs" />
+    <Compile Include="ChildEntityCollectionPropertyDefinition.cs" />
+    <Compile Include="CodeAnalysis\ExcludeFromCodeCoverageAttribute.cs" />
+    <Compile Include="DataDictionary.cs" />
+    <Compile Include="Deserializers\AgeValueProviderElementDeserializer.cs" />
+    <Compile Include="Deserializers\AuditPropertyDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\ChildEntityCollectionElementDeserializer.cs" />
+    <Compile Include="Deserializers\ChildEntityCollectionPropertyDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\ChildEntityElementDeserializer.cs" />
+    <Compile Include="Deserializers\DataDictionaryElementDeserializer.cs" />
+    <Compile Include="Deserializers\PropertyDefinitionElementDeserializerBase.cs" />
+    <Compile Include="Deserializers\PropertyDefinitionReferenceElementDeserializer.cs" />
+    <Compile Include="Deserializers\PropertyValueProviderElementDeserializer.cs" />
+    <Compile Include="Deserializers\RegExRuleElementDeserializer.cs" />
+    <Compile Include="Deserializers\RuleDeserializerBase.cs" />
+    <Compile Include="Deserializers\RuleElementGroupDeserializer.cs" />
+    <Compile Include="Deserializers\ValueProviderElementDeserializerBase.cs" />
+    <Compile Include="Deserializers\VirtualPropertyDefinitionElementDeserializer.cs" />
+    <Compile Include="EntityDefinition.cs" />
+    <Compile Include="Deserializers\DataDictionaryDocumentDeserializer.cs" />
+    <Compile Include="Deserializers\EntityDefinitionElementDeserializer.cs" />
+    <Compile Include="Deserializers\EntityDocumentDeSerializer.cs" />
+    <Compile Include="Deserializers\EntityElementDeserializer.cs" />
+    <Compile Include="Deserializers\EntityPropertyValueCollectionElementDeserializer.cs" />
+    <Compile Include="Deserializers\EntityPropertyValueElementDeserializer.cs" />
+    <Compile Include="Deserializers\PropertyDefinitionElementDeserializer.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityDefinitionCollection.cs" />
+    <Compile Include="EntityPropertyChangedEventArgs.cs" />
+    <Compile Include="EntityPropertyValueChangeset.cs" />
+    <Compile Include="EntityPropertyValueCollection.cs" />
+    <Compile Include="EntityPropertyValue.cs" />
+    <Compile Include="EntitySetValueResult.cs" />
+    <Compile Include="Factories\AgeValueProviderFactory.cs" />
+    <Compile Include="Factories\AuditPropertyDefinitionFactory.cs" />
+    <Compile Include="Factories\ChildEntityCollectionFactory.cs" />
+    <Compile Include="Factories\ChildEntityCollectionPropertyDefinitionFactory.cs" />
+    <Compile Include="Factories\ChildEntityFactory.cs" />
+    <Compile Include="Factories\DataDictionaryFactory.cs" />
+    <Compile Include="Factories\EntityDefinitionFactory.cs" />
+    <Compile Include="Factories\EntityFactory.cs" />
+    <Compile Include="Factories\EntityPropertyValueCollectionFactory.cs" />
+    <Compile Include="Factories\EntityPropertyValueFactory.cs" />
+    <Compile Include="Factories\PropertyDefinitionFactory.cs" />
+    <Compile Include="Factories\PropertyDefinitionReferenceFactory.cs" />
+    <Compile Include="Factories\PropertyValueProviderFactory.cs" />
+    <Compile Include="Factories\VirtualPropertyDefinitionFactory.cs" />
+    <Compile Include="IChildEntityCollectionPropertyDefinition.cs" />
+    <Compile Include="IDataDictionary.cs" />
+    <Compile Include="IEntityDefinition.cs" />
+    <Compile Include="IDataDictionaryLocator.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IPropertyDefinition.cs" />
+    <Compile Include="IPropertyReferenceContainer.cs" />
+    <Compile Include="IRuleDefinition.cs" />
+    <Compile Include="ISessionContext.cs" />
+    <Compile Include="IUser.cs" />
+    <Compile Include="IValueProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyDefinition.cs" />
+    <Compile Include="PropertyDefinitionCollection.cs" />
+    <Compile Include="RuleDefinitionCollection.cs" />
+    <Compile Include="RuleDefinitionSeverity.cs" />
+    <Compile Include="Rules\RegExRuleDefinition.cs" />
+    <Compile Include="Serializers\ChildEntityCollectionElementSerializer.cs" />
+    <Compile Include="Serializers\ChildEntityElementSerializer.cs" />
+    <Compile Include="SessionContext.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="ValueKind.cs" />
+    <Compile Include="PropertyDefinitionReference.cs" />
+    <Compile Include="Serializers\EntityDocumentSerializer.cs" />
+    <Compile Include="Serializers\EntityElementSerializer.cs" />
+    <Compile Include="Serializers\EntityPropertyValueCollectionElementSerializer.cs" />
+    <Compile Include="Serializers\EntityPropertyValueElementSerializer.cs" />
+    <Compile Include="EntityPropertyValueChange.cs" />
+    <Compile Include="ValueProviders\AgeValueProvider.cs" />
+    <Compile Include="ValueProviders\PropertyValueProvider.cs" />
+    <Compile Include="VirtualPropertyDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FakeItEasy">
+      <HintPath>..\packages\FakeItEasy.2.3.3\lib\net40\FakeItEasy.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

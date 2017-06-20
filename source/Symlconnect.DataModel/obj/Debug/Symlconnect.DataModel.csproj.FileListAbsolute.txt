@@ -1,0 +1,14 @@
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\Symlconnect.DataModel.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\Symlconnect.DataModel.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\FakeItEasy.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\Symlconnect.Common.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\Symlconnect.Contracts.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\Prism.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\Symlconnect.Common.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\Symlconnect.Contracts.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\FakeItEasy.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\FakeItEasy.xml
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\bin\Debug\Prism.xml
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\obj\Debug\Symlconnect.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\obj\Debug\Symlconnect.DataModel.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.DataModel\obj\Debug\Symlconnect.DataModel.pdb

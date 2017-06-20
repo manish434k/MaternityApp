@@ -1,0 +1,27 @@
+﻿<entity id="EntityId" datadictionary="DataDictionaryName" entityname="EntityName" createddatetime="2017-01-02T00:00:00.0000000Z" createdbyuserid="CreatedByUserIdValue" createdbyuserdisplayname="CreatedByUserDisplayNameValue">
+  <values propertyname="stringproperty">
+    <value sessionid="SessionIdValue0" userid="UserIdValue0" changedatetime="2017-01-01T00:00:00.0000000Z">StringValue1</value>
+    <value sessionid="SessionIdValue1" userid="UserIdValue1" changedatetime="2017-01-02T00:00:00.0000000Z">StringValue2</value>
+    <value sessionid="SessionIdValue2" userid="UserIdValue2" changedatetime="2017-01-03T00:00:00.0000000Z">StringValue3</value>
+  </values>
+  <values propertyname="longproperty">
+    <value sessionid="SessionIdValue0" userid="UserIdValue0" changedatetime="2017-01-01T00:00:00.0000000Z" valuekind="long">1</value>
+    <value sessionid="SessionIdValue1" userid="UserIdValue1" changedatetime="2017-01-02T00:00:00.0000000Z" valuekind="long">2</value>
+    <value sessionid="SessionIdValue2" userid="UserIdValue2" changedatetime="2017-01-03T00:00:00.0000000Z" valuekind="long">3</value>
+  </values>
+  <values propertyname="doubleproperty">
+    <value sessionid="SessionIdValue0" userid="UserIdValue0" changedatetime="2017-01-01T00:00:00.0000000Z" valuekind="double">1.1</value>
+    <value sessionid="SessionIdValue1" userid="UserIdValue1" changedatetime="2017-01-02T00:00:00.0000000Z" valuekind="double">2.2</value>
+    <value sessionid="SessionIdValue2" userid="UserIdValue2" changedatetime="2017-01-03T00:00:00.0000000Z" valuekind="double">3.3</value>
+  </values>
+  <values propertyname="boolproperty">
+    <value sessionid="SessionIdValue0" userid="UserIdValue0" changedatetime="2017-01-01T00:00:00.0000000Z" valuekind="bool">true</value>
+    <value sessionid="SessionIdValue1" userid="UserIdValue1" changedatetime="2017-01-02T00:00:00.0000000Z" valuekind="bool">false</value>
+    <value sessionid="SessionIdValue2" userid="UserIdValue2" changedatetime="2017-01-03T00:00:00.0000000Z" valuekind="bool">true</value>
+  </values>
+  <values propertyname="dateproperty">
+    <value sessionid="SessionIdValue0" userid="UserIdValue0" changedatetime="2017-01-01T00:00:00.0000000Z" valuekind="datetime">2017-01-01T00:00:00.0000000Z</value>
+    <value sessionid="SessionIdValue1" userid="UserIdValue1" changedatetime="2017-01-02T00:00:00.0000000Z" valuekind="datetime">2017-01-02T00:00:00.0000000Z</value>
+    <value sessionid="SessionIdValue2" userid="UserIdValue2" changedatetime="2017-01-03T00:00:00.0000000Z" valuekind="datetime">2017-01-03T00:00:00.0000000Z</value>
+  </values>
+</entity>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<form datadictionary="maternity" entityname="antenatalconsultation" id="consultation">
+  <datebox value="DateTime" caption="Date of birth:"/>
+  <textblock value="Gestation" caption="Gestation:"/>
+  <!-- Audit properties -->
+</form>

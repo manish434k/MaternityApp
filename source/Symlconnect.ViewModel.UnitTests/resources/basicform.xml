@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<form datadictionary="datadictionaryvalue">
+  <lookups>
+    <lookup id="lookup1">
+      <entry value="entryvalue1"/>
+      <entry value="entryvalue2" caption="entrycaption2"/>
+    </lookup>
+  </lookups>
+  <controls>
+    <checkbox id="checkboxcontrol" caption="checkboxcontrolcaption" visible="checkboxcontrolvisible" value="checkboxcontrolvalue" />
+    <datebox id="dateboxcontrol" caption="dateboxcontrolcaption" visible="dateboxcontrolvisible" value="dateboxcontrolvalue" />
+    <dropdown id="dropdowncontrol" caption="dropdowncontrolcaption" visible="dropdowncontrolvisible" value="dropdowncontrolvalue" lookup="lookupvalue" />
+    <editabledropdown id="editabledropdowncontrol" caption="editabledropdowncontrolcaption" visible="editabledropdowncontrolvisible" value="editabledropdowncontrolvalue" lookup="lookupvalue" />
+    <stack id="stackcontrol" caption="stackcontrolcaption" visible="stackcontrolvisible" value="stackcontrolvalue">
+      <textbox id="stackchild1"/>
+      <textbox id="stackchild2"/>
+    </stack>
+    <textarea id="textareacontrol" caption="textareacontrolcaption" visible="textareacontrolvisible" value="textareacontrolvalue" />
+    <textblock id="textblockcontrol" caption="textblockcontrolcaption" visible="textblockcontrolvisible" value="textblockcontrolvalue" />
+    <textbox id="textboxcontrol" caption="textboxcontrolcaption" visible="textboxcontrolvisible" value="textboxcontrolvalue" />
+    <yesno id="yesnocontrol" caption="yesnocontrolcaption" visible="yesnocontrolvisible" value="yesnocontrolvalue" />
+    
+    <!--<checkbox id="control" caption="caption" visible="visible" value="value" />-->
+  </controls>
+  <section id="rootsectionid1" backcolor="#111111" forecolor="#222222" title="rootsectionid1title">
+    <section id="childsectionid1" title="childsectionid1title">
+      <textbox id="childtextboxid1" />
+      <textbox id="childtextboxid2" />
+    </section>
+  </section>
+  <section id="rootsectionid2">
+    <section id="childsectionid2">
+      
+    </section>
+  </section>
+</form>

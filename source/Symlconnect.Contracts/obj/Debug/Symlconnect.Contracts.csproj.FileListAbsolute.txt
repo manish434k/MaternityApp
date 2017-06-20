@@ -1,0 +1,5 @@
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Contracts\bin\Debug\Symlconnect.Contracts.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Contracts\bin\Debug\Symlconnect.Contracts.pdb
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Contracts\obj\Debug\Symlconnect.Contracts.csprojResolveAssemblyReference.cache
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Contracts\obj\Debug\Symlconnect.Contracts.dll
+C:\Users\nrp0230709\Documents\SymlConnect\Maternity\RichardSlogget\Inbound\source\Symlconnect.Contracts\obj\Debug\Symlconnect.Contracts.pdb

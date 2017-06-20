@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Symlconnect.Maternity.Wpf.FormControls.AuditFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Symlconnect.ViewModel.ViewModels;assembly=Symlconnect.ViewModel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModels:AuditControlDefinitionViewModel, IsDesignTimeCreatable=True}">
+    <Grid Style="{StaticResource MessageStyle}"
+          Margin="0"
+          Visibility="{Binding Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+          HorizontalAlignment="Stretch">
+        <Border Style="{StaticResource AuditBorderStyle}">
+            <StackPanel>
+                <TextBlock Text="{Binding ControlDefinition.Content}"/>
+                <Button Style="{StaticResource SquareButtonStyle}"
+                        Margin="0,8,0,0"
+                        HorizontalAlignment="Left"
+                        Command="{Binding ConfirmCommand}"
+                        Visibility="{Binding Path=Value, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=invert}">Confirm</Button>
+                <StackPanel Orientation="Horizontal" Margin="0,4,0,0"
+                            Visibility="{Binding Path=Value, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Image Source="../Resources/check_16.png"
+                           Width="16"
+                           Height="16" />
+                    <TextBlock Margin="4,0,0,0">Confirmed by </TextBlock>
+                    <TextBlock Margin="4,0,0,0" Text="{Binding AuditUserDisplayName}"/>
+                    <TextBlock Margin="4,0,0,0"> on </TextBlock>
+                    <TextBlock Margin="4,0,0,0" Text="{Binding AuditDateTime}"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
+

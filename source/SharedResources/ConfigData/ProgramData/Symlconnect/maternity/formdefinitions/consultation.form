@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<form datadictionary="maternity" entityname="antenatalconsultation" id="consultation">
+  <lookups>
+    <lookup id="presentation" iseditable="true">
+        <entry value="Ceph" />
+        <entry value="Breech"/>
+    </lookup>
+    <lookup id="engaged" iseditable="false">
+        <entry value="Not Engaged"/>
+        <entry value="1/5"/>
+        <entry value="2/5"/>
+        <entry value="3/5"/>
+        <entry value="4/5"/>
+        <entry value="5/5"/>
+    </lookup>
+  </lookups>
+  <controls>
+    <audit id="IsFetalMovementFeltAndDiscussed" value="IsFetalMovementFeltAndDiscussed" caption="Fetal Movement">Action: Feel for fetal movement and discuss.</audit>
+    <audit id="IsCarePlanReviewed" value="IsCarePlanReviewed" caption="Care Plan Reviewed">Action: Review the care plan.</audit>
+  </controls>
+  <section title="%entitycreateddatetime%" backcolor="#000000" forecolor="#FFFFFF">
+    <section title="">
+      <!-- <datebox value="DateTime" caption="Date &amp; time:"/> -->
+      <textblock value="Gestation" caption="Gestation:"/>
+      <stack ishorizontal="true">
+        <stack>
+            <textbox value="Urine" width="50" caption="Urine:"/>
+            <textbox value="BloodPressureSys" width="50" caption="Blood Pressure (systolic):"/>
+            <textbox value="BloodPressureDiaSys" width="50" caption="Blood Pressure (diastolic):"/>
+        </stack>
+        <stack margin="24,0,0,0">
+          <textbox value="HeightInCms" width="50" caption="Height (cms):"/>
+          <textbox value="WeightInKgs" width="50" caption="Weight (kgs):"/>
+        </stack>
+      </stack>
+      <dropdown lookup="presentation" value="Presentation" caption="Presentation:"/>
+      <dropdown lookup="engaged" value="Engaged" caption="Engaged:"/>
+      <textbox value="FetalHeartRate" caption="Fetal Heart Rate:"/>        
+      <audit ref="IsFetalMovementFeltAndDiscussed"/>
+      <textarea value="comments" caption="Comments:"/>
+      <audit ref="IsCarePlanReviewed"/>
+    </section>
+  </section>
+</form>

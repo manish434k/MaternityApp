@@ -1,0 +1,190 @@
+﻿<Application x:Class="Symlconnect.Maternity.Wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:Symlconnect.Maternity.Wpf.Converters"
+             xmlns:cvms="clr-namespace:Symlconnect.ViewModel.ViewModels;assembly=Symlconnect.ViewModel"
+             xmlns:formControls="clr-namespace:Symlconnect.Maternity.Wpf.FormControls"
+             xmlns:rules="clr-namespace:Symlconnect.DataModel.Rules;assembly=Symlconnect.DataModel">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Begin Mahapps -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+
+                <!-- accent resource -->
+                <!-- change "Cobalt" to the accent color you want -->
+
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Cobalt.xaml" />
+
+                <!-- theme resource -->
+                <!-- change "BaseLight" to the theme you want -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <!-- End Mahapps -->
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Converters -->
+            <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:IsNotNullOrEmptyToVisibilityConverter x:Key="IsNotNullOrEmptyToVisibilityConverter"/>
+            <converters:ColorToHexStringConverter x:Key="ColorToHexStringConverter" />
+            <converters:IsHorizontalToOrientationConverter x:Key="IsHorizontalToOrientationConverter"/>
+            <converters:GreaterThanZeroToVisibilityConverter x:Key="GreaterThanZeroToVisibilityConverter"/>
+            <converters:IsNotNullToVisibilityConverter x:Key="IsNotNullToVisibilityConverter"/>
+
+            <!-- Page Control -->
+            <Style TargetType="TextBlock" x:Key="PageControlTitleStyle">
+                <Setter Property="FontSize" Value="28"></Setter>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="PageControlSubtitleStyle">
+                <Setter Property="FontSize" Value="16"></Setter>
+                <Setter Property="Margin" Value="0,-3,0,0"></Setter>
+            </Style>
+
+            <!-- Maternity Record Title/SubTitle Styles -->
+            <Style TargetType="TextBlock" x:Key="ItemTitleStyle">
+                <Setter Property="FontSize" Value="16"></Setter>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="ItemSubTitleStyle">
+                <Setter Property="FontSize" Value="14"></Setter>
+            </Style>
+
+            <!-- Alert/Notification/Audit Styles -->
+            <Style TargetType="Grid" x:Key="MessageStyle">
+                <Setter Property="Margin" Value="11"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
+            <Style TargetType="Border" x:Key="MessageBorderBaseStyle">
+                <Setter Property="BorderThickness" Value="4,2,2,2"></Setter>
+                <Setter Property="Padding" Value="7"></Setter>
+            </Style>
+            <Style TargetType="Border" x:Key="AlertBorderStyle" BasedOn="{StaticResource MessageBorderBaseStyle}">
+                <Setter Property="BorderBrush" Value="#EFC700" />
+                <Setter Property="Background" Value="#FFF9E5" />
+            </Style>
+            <Style TargetType="TextBlock" x:Key="AlertCaptionStyle">
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+            <Style TargetType="Border" x:Key="InvalidRuleBorderStyle" BasedOn="{StaticResource MessageBorderBaseStyle}">
+                <Setter Property="BorderBrush" Value="#BC0000" />
+                <Setter Property="Background" Value="#FFD1D1" />
+            </Style>
+            <Style TargetType="Border" x:Key="AuditBorderStyle" BasedOn="{StaticResource MessageBorderBaseStyle}">
+                <Setter Property="BorderBrush" Value="#267F00" />
+                <Setter Property="Background" Value="#E9FFE0" />
+            </Style>
+
+            <!-- Form View Styles -->
+            <Style TargetType="TextBlock" x:Key="SectionStyle">
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
+                <Setter Property="Padding" Value="7,4,0,7"/>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="HeadingStyle">
+                <Setter Property="FontSize" Value="18"></Setter>
+                <Setter Property="FontWeight" Value="Normal"></Setter>
+                <Setter Property="Margin" Value="0,7,0,7"></Setter>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="SubHeading" BasedOn="{StaticResource HeadingStyle}">
+                <Setter Property="FontSize" Value="16"></Setter>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="MenuHeading">
+                <Setter Property="FontSize" Value="16"></Setter>
+                <Setter Property="FontWeight" Value="Normal"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="Margin" Value="7,1,0,2"></Setter>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="MenuSubHeading">
+                <Setter Property="FontSize" Value="14"></Setter>
+                <Setter Property="FontWeight" Value="Normal"></Setter>
+                <Setter Property="Foreground" Value="Black"></Setter>
+                <Setter Property="Margin" Value="7,1,4,1"></Setter>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            </Style>
+            
+            <!-- Form Section -->
+            <DataTemplate DataType="{x:Type cvms:FormSectionViewModel}">
+                <StackPanel Margin="11,0,0,0">
+                    <TextBlock Style="{StaticResource SubHeading}"
+                       Text="{Binding FormSectionDefinition.Title}"/>
+                    <ItemsControl ItemsSource="{Binding ControlDefinitionViewModels}"
+                              Margin="4,0,0,0"
+                              Grid.IsSharedSizeScope="True"/>
+                </StackPanel>
+            </DataTemplate>
+
+            <!-- Form Control DataTemplates -->
+            <DataTemplate DataType="{x:Type cvms:TextBoxControlDefinitionViewModel}">
+                <formControls:TextBoxFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:DateBoxControlDefinitionViewModel}">
+                <formControls:DateBoxFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:TextBlockControlDefinitionViewModel}">
+                <formControls:TextBlockFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:YesNoControlDefinitionViewModel}">
+                <formControls:YesNoFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:DropdownControlDefinitionViewModel}">
+                <formControls:DropdownFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:EditableDropdownControlDefinitionViewModel}">
+                <formControls:EditableDropdownFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:StackControlDefinitionViewModel}">
+                <formControls:StackFormControl Margin="0"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:CheckboxControlDefinitionViewModel}">
+                <formControls:CheckboxFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:TextAreaControlDefinitionViewModel}">
+                <formControls:TextAreaFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:AlertControlDefinitionViewModel}">
+                <formControls:AlertFormControl Margin="0,0,0,4"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type rules:RegExRuleDefinition}">
+                <formControls:RuleDefinitionFormControl Margin="0,5,0,2"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:AuditControlDefinitionViewModel}">
+                <formControls:AuditFormControl Margin="7,5,0,11" />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type cvms:ChildEntityCollectionControlDefinitionViewModel}">
+                <formControls:ChildEntityCollectionFormControl />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
